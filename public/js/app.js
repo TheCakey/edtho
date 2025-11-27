@@ -1,10 +1,4 @@
-const phrases = [
-  "എന്തായി കിടീലേ?😒",
-  "നീ പൊളിച്ചേ കൂറ്റാ!😘",
-  "ഇനി തരണമോ?😋",
-  "ഇനി വേണോ?😏",
-  "അങ്ങ് കൊടുക്കൂ കുമാരേട്ടാ!😲",
-];
+
 
 const MAX_LINES = 1500;
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,20 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const lineCount = document.getElementById("lineCount");
   let currentNoteId = null;
 
-  const copyUrlBtn = document.getElementById("copyURL");
+ const copyAllBtn = document.getElementById("copyAll");
 
-if (copyUrlBtn) {
-  copyUrlBtn.addEventListener("click", () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url)
+if (copyAllBtn) {
+  copyAllBtn.addEventListener("click", () => {
+    const text = noteContent.value;
+    if (!text) {
+      showStatus("Nothing to copy", "error");
+      return;
+    }
+
+    navigator.clipboard.writeText(text)
       .then(() => {
-        showStatus("Link copied!", "success");
+        showStatus("Copied all text!", "success");
       })
       .catch(() => {
-        showStatus("Failed to copy link.", "error");
+        // Fallback for older browsers
+        noteContent.select();
+        document.execCommand("copy");
+        showStatus("Copied all text!", "success");
       });
   });
 }
+
 
 
   // Modal functions

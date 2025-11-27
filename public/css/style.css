@@ -208,12 +208,19 @@ input:focus {
 }
 
 .line-count {
+  font-size: 13px;
+  color: #888;
+  padding-right: 4px;
+}
+
+
+/* .line-count {
   font-size: 14px;
   color: #888;
   margin-bottom: 5px;
   text-align: right;
   padding-right: 10px;
-}
+} */
 
 .sub-header {
   font-size: 0.8rem; /* Reduced from 1.5rem */
@@ -609,3 +616,12 @@ input:focus {
 .footer-nav span {
   color: #bebdbd;
 }
+
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+

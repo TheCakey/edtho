@@ -112,12 +112,22 @@
     </header>
     <!-- <h2 id="headerText" class="sub-header"></h2> -->
     <main>
-      <div id="status" class="status"></div>
-      <div class="editor-container">
-        <div id="lineCount" class="line-count">0/1500</div>
-        <textarea id="noteContent" placeholder="Start typing your note here..." style="height: 500px;"></textarea>
-      </div>
-    </main>
+  <div id="status" class="status"></div>
+  <div class="editor-container">
+    <div class="editor-header">
+      <button id="copyAll" class="btn icon" title="Copy note content" aria-label="Copy note content">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M16 1H4C2.895 1 2 1.895 2 3v12h2V3h12V1z" fill="currentColor"/>
+          <path d="M20 5H8c-1.105 0-2 .895-2 2v14c0 1.105.895 2 2 2h12c1.105 0 2-.895 2-2V7c0-1.105-.895-2-2-2zm0 16H8V7h12v14z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div id="lineCount" class="line-count">0/1500</div>
+    </div>
+
+    <textarea id="noteContent" placeholder="Start typing your note here..." style="height: 500px;"></textarea>
+  </div>
+</main>
+
 
     <div id="settingsModal" class="modal">
       <div class="modal-content">

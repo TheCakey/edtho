@@ -31,7 +31,11 @@
   <meta name="DC.creator" content="Edutho Team" />
   <meta name="DC.description" content="Create and share private, encrypted notes easily and securely." />
   <meta name="DC.language" content="en" />
+<link rel="canonical" href="https://edutho.in/" />
 
+<meta name="application-name" content="Edutho" />
+<meta name="apple-mobile-web-app-title" content="Edutho" />
+<meta name="theme-color" content="#ffffff" />
   <!-- Language Declaration -->
   <meta http-equiv="content-language" content="en" />
 
@@ -44,20 +48,23 @@
     src="https://platform-api.sharethis.com/js/sharethis.js#property=682c7b70bfa7c90013226e17&product=sticky-share-buttons&source=platform"
     async="async"></script> -->
 
-      <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Edutho",
-    "url": "https://edutho.in/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://edutho.in/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 
+
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Edutho",
+  "applicationCategory":"Utility",
+  "operatingSystem":"Web",
+  "description":"A private, secure, anonymous online notepad with no login required for encrypted text and code sharing.",
+  "url":"https://edutho.in/",
+  "creator":{
+     "@type":"Organization",
+     "name":"Edutho"
+  }
+}
+</script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-263L0SHW0D"></script>
 <script>
@@ -99,7 +106,9 @@
 
   <div id="app">
     <header>
-      <h1 class="headText">എടുത്തോ..😌!</h1>
+      <h1 class="headText">Edutho </h1>
+<h1 class="seo-h1">Edutho – Private, No-Login Online Notepad</h1>
+
 
       <div class="controls">
         <button id="newNote" class="btn primary">New Note</button>
@@ -112,12 +121,22 @@
     </header>
     <!-- <h2 id="headerText" class="sub-header"></h2> -->
     <main>
-      <div id="status" class="status"></div>
-      <div class="editor-container">
-        <div id="lineCount" class="line-count">0/1500</div>
-        <textarea id="noteContent" placeholder="Start typing your note here..." style="height: 500px;"></textarea>
-      </div>
-    </main>
+  <div id="status" class="status"></div>
+  <div class="editor-container">
+    <div class="editor-header">
+      <button id="copyAll" class="btn icon" title="Copy note content" aria-label="Copy note content">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M16 1H4C2.895 1 2 1.895 2 3v12h2V3h12V1z" fill="currentColor"/>
+          <path d="M20 5H8c-1.105 0-2 .895-2 2v14c0 1.105.895 2 2 2h12c1.105 0 2-.895 2-2V7c0-1.105-.895-2-2-2zm0 16H8V7h12v14z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div id="lineCount" class="line-count">0/1500</div>
+    </div>
+
+    <textarea id="noteContent" placeholder="Start typing your note here..." style="height: 500px;"></textarea>
+  </div>
+</main>
+
 
     <div id="settingsModal" class="modal">
       <div class="modal-content">
@@ -157,15 +176,54 @@
   </nav>
 </footer>
 
+<p style="visibility:hidden; height:0; overflow:hidden;">
+online notepad, secure notes, anonymous notepad, paste tool, share text via link, private code paste, encrypted note sharing, web notepad, no account notes, disposable note tool, quick text sharing
+</p>
 
   <script src="/js/app.js"></script>
+   <!-- Our mission is to keep Edutho completely free, privacy-respecting. -->
+    <!-- Support me on Buy me a coffee!" 
+    data-message="If you find Edutho useful and would 
+    like to support its hosting and future features, 
+    your contribution means a lot. -->
+  <script data-name="BMC-Widget" data-cfasync="false" 
+  src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+   data-id="edutho"
+    data-description="Support me on Buy me a coffee!" 
+    data-message="If Edutho is useful to you, your contribution means a lot❤️.
+"
+     data-color="#5F7FFF" data-position="Right"
+      data-x_margin="18" data-y_margin="18"></script>
+
+  <!-- <div class="coffee-float-btn">
+  <script
+    type="text/javascript"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+    data-name="bmc-button"
+    data-slug="edutho"
+    data-color="#FFDD00"
+    data-emoji=""
+    data-font="Cookie"
+    data-text="Buy me a coffee"
+    data-outline-color="#000000"
+    data-font-color="#000000"
+    data-coffee-color="#ffffff">
+  </script>
+</div> -->
+
   <script>
+
+   
   const options = [ 'Edutho..😌!', 'Edutho..🤝!', 'Edutho..🫂!'];
 const header = document.querySelector('.headText');
 const randomIndex = Math.floor(Math.random() * options.length);
 header.textContent = options[randomIndex];
 
 </script>
+
+
+
+
 </body>
 
 </html>

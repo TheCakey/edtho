@@ -45,6 +45,8 @@ app.use(
           "https://www.google-analytics.com",
           "https://platform-api.sharethis.com",
           "https://buttons-config.sharethis.com",
+            "https://cdnjs.buymeacoffee.com",
+              "https://www.buymeacoffee.com"
         ],
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
@@ -56,6 +58,8 @@ app.use(
           "https://*.doubleclick.net",
           "https://*.sharethis.com",
           "https://www.google.com",
+          "https://cdn.buymeacoffee.com",
+            "https://www.buymeacoffee.com"
         ],
         connectSrc: [
           "'self'",
@@ -65,11 +69,16 @@ app.use(
           "https://region1.google-analytics.com",
           "https://www.googletagmanager.com",
           "https://googleads.g.doubleclick.net",
+            "https://www.buymeacoffee.com",
+  "https://cdnjs.buymeacoffee.com",
         ],
         frameSrc: [
           "'self'",
           "https://googleads.g.doubleclick.net",
           "https://tpc.googlesyndication.com",
+          "https://cdn.buymeacoffee.com",
+           "https://www.buymeacoffee.com",
+  "https://buymeacoffee.com"
         ],
       },
     },

@@ -1,10 +1,4 @@
-const phrases = [
-  "എന്തായി കിടീലേ?😒",
-  "നീ പൊളിച്ചേ കൂറ്റാ!😘",
-  "ഇനി തരണമോ?😋",
-  "ഇനി വേണോ?😏",
-  "അങ്ങ് കൊടുക്കൂ കുമാരേട്ടാ!😲",
-];
+
 
 const MAX_LINES = 1500;
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,6 +28,29 @@ if (copyUrlBtn) {
       })
       .catch(() => {
         showStatus("Failed to copy link.", "error");
+      });
+  });
+}
+
+const copyAllBtn = document.getElementById("copyAll");
+
+if (copyAllBtn) {
+  copyAllBtn.addEventListener("click", () => {
+    const text = noteContent.value;
+    if (!text) {
+      showStatus("Nothing to copy", "error");
+      return;
+    }
+
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        showStatus("Copied all text!", "success");
+      })
+      .catch(() => {
+        // Fallback for older browsers
+        noteContent.select();
+        document.execCommand("copy");
+        showStatus("Copied all text!", "success");
       });
   });
 }

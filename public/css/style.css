@@ -208,12 +208,19 @@ input:focus {
 }
 
 .line-count {
+  font-size: 13px;
+  color: #888;
+  padding-right: 4px;
+}
+
+
+/* .line-count {
   font-size: 14px;
   color: #888;
   margin-bottom: 5px;
   text-align: right;
   padding-right: 10px;
-}
+} */
 
 .sub-header {
   font-size: 0.8rem; /* Reduced from 1.5rem */
@@ -608,4 +615,53 @@ input:focus {
 
 .footer-nav span {
   color: #bebdbd;
+}
+
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+
+
+
+
+.coffee-float-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  z-index: 9999;
+  transform: scale(0.7);
+  transform-origin: bottom right;
+  opacity: 0;
+  animation: coffee-fade-in 0.5s ease-out forwards 0.4s;
+}
+
+/* Mobile: smaller & slightly lower */
+@media (max-width: 600px) {
+  .coffee-float-btn {
+    right: 15px;
+    bottom: 58px;  /* 8px lower than before */
+    transform: scale(0.56);  /* smaller */
+  }
+}
+
+
+@keyframes coffee-fade-in {
+  to {
+    opacity: 5;
+  }
+}
+
+.seo-h1 {
+  position:absolute;
+  left:-9999px;
+  top:-9999px;
+  height:1px;
+  width:1px;
+  overflow:hidden;
+  white-space:nowrap;
 }

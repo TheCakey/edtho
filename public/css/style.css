@@ -625,3 +625,33 @@ input:focus {
   margin-bottom: 6px;
 }
 
+
+
+
+
+.coffee-float-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  z-index: 9999;
+  transform: scale(0.7);
+  transform-origin: bottom right;
+  opacity: 0;
+  animation: coffee-fade-in 0.5s ease-out forwards 0.4s;
+}
+
+/* Mobile: smaller & slightly lower */
+@media (max-width: 600px) {
+  .coffee-float-btn {
+    right: 15px;
+    bottom: 58px;  /* 8px lower than before */
+    transform: scale(0.56);  /* smaller */
+  }
+}
+
+
+@keyframes coffee-fade-in {
+  to {
+    opacity: 5;
+  }
+}

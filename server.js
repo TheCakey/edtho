@@ -45,6 +45,7 @@ app.use(
           "https://www.google-analytics.com",
           "https://platform-api.sharethis.com",
           "https://buttons-config.sharethis.com",
+            "https://cdnjs.buymeacoffee.com",
         ],
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],

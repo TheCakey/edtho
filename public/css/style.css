@@ -655,3 +655,13 @@ input:focus {
     opacity: 5;
   }
 }
+
+.seo-h1 {
+  position:absolute;
+  left:-9999px;
+  top:-9999px;
+  height:1px;
+  width:1px;
+  overflow:hidden;
+  white-space:nowrap;
+}

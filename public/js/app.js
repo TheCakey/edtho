@@ -17,7 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const lineCount = document.getElementById("lineCount");
   let currentNoteId = null;
 
- const copyAllBtn = document.getElementById("copyAll");
+  const copyUrlBtn = document.getElementById("copyURL");
+
+if (copyUrlBtn) {
+  copyUrlBtn.addEventListener("click", () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        showStatus("Link copied!", "success");
+      })
+      .catch(() => {
+        showStatus("Failed to copy link.", "error");
+      });
+  });
+}
+
+const copyAllBtn = document.getElementById("copyAll");
 
 if (copyAllBtn) {
   copyAllBtn.addEventListener("click", () => {
@@ -39,7 +54,6 @@ if (copyAllBtn) {
       });
   });
 }
-
 
 
   // Modal functions

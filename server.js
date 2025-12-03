@@ -320,7 +320,7 @@ app.put("/api/notes/:id/slug", async (req, res) => {
 
   try {
     let encryptId = encryptNoteId(id)
-    let newEncryptedSlug = encryptContent(newSlug)
+    let newEncryptedSlug = encryptNoteId(newSlug)
     // Check if newSlug already exists
     const existingNote = await Note.findOne({ id: newEncryptedSlug });
     if (existingNote) {

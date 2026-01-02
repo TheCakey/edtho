@@ -33,57 +33,133 @@ connectDB();
 // Security middleware
 app.use(
   helmet({
+    // -------------------------
+    // CONTENT SECURITY POLICY
+    // -------------------------
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
+
         scriptSrc: [
           "'self'",
           "'unsafe-inline'",
-          "https://pagead2.googlesyndication.com",
-          "https://www.googletagservices.com",
-          "https://www.googletagmanager.com",
-          "https://www.google-analytics.com",
-          "https://platform-api.sharethis.com",
-          "https://buttons-config.sharethis.com",
-            "https://cdnjs.buymeacoffee.com",
-              "https://www.buymeacoffee.com"
+          "'unsafe-eval'",
+          "https:",
         ],
-        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+
+        connectSrc: [
+          "'self'",
+          "https:",
+        ],
+
+        frameSrc: [
+          "'self'",
+          "https:",
+        ],
+
         imgSrc: [
           "'self'",
           "data:",
-          "https://platform-cdn.sharethis.com",
-          "https://*.googlesyndication.com",
-          "https://*.doubleclick.net",
-          "https://*.sharethis.com",
-          "https://www.google.com",
-          "https://cdn.buymeacoffee.com",
-            "https://www.buymeacoffee.com"
+          "https:",
         ],
-        connectSrc: [
+
+        styleSrc: [
           "'self'",
-          "https://l.sharethis.com",
-          "https://datasphere-sbsvc.sharethis.com",
-          "https://www.google-analytics.com",
-          "https://region1.google-analytics.com",
-          "https://www.googletagmanager.com",
-          "https://googleads.g.doubleclick.net",
-            "https://www.buymeacoffee.com",
-  "https://cdnjs.buymeacoffee.com",
+          "'unsafe-inline'",
+          "https:",
         ],
-        frameSrc: [
+
+        fontSrc: [
           "'self'",
-          "https://googleads.g.doubleclick.net",
-          "https://tpc.googlesyndication.com",
-          "https://cdn.buymeacoffee.com",
-           "https://www.buymeacoffee.com",
-  "https://buymeacoffee.com"
+          "https:",
         ],
+
+        objectSrc: ["'none'"],
+        baseUri: ["'self'"],
+        formAction: ["'self'"],
+
+        frameAncestors: ["'self'"],
       },
     },
+
+    // -------------------------
+    // HTTPS ENFORCEMENT
+    // -------------------------
+    hsts: {
+      maxAge: 15552000, // 180 days
+      includeSubDomains: true,
+      preload: false, // keep false unless fully HTTPS-ready
+    },
+
+    // -------------------------
+    // REFERRER
+    // -------------------------
+    referrerPolicy: {
+      policy: "strict-origin-when-cross-origin",
+    },
+
+    // -------------------------
+    // MIME SNIFFING
+    // -------------------------
+    xContentTypeOptions: true,
+
+    // -------------------------
+    // CLICKJACKING
+    // -------------------------
+    xFrameOptions: {
+      action: "sameorigin",
+    },
+
+    // -------------------------
+    // LEGACY XSS PROTECTION
+    // -------------------------
+    xssFilter: true,
+
+    // -------------------------
+    // DNS PREFETCH
+    // -------------------------
+    dnsPrefetchControl: {
+      allow: false,
+    },
+
+    // -------------------------
+    // BROWSER ISOLATION (SAFE MODE)
+    // -------------------------
+    crossOriginOpenerPolicy: {
+      policy: "same-origin-allow-popups",
+    },
+
+    crossOriginResourcePolicy: {
+      policy: "cross-origin",
+    },
+
+    originAgentCluster: true,
+
+    // -------------------------
+    // PERMISSIONS POLICY
+    // -------------------------
+    permissionsPolicy: {
+      features: {
+        camera: [],
+        microphone: [],
+        geolocation: [],
+        payment: [],
+        usb: [],
+        bluetooth: [],
+        serial: [],
+        midi: [],
+        fullscreen: ["self"],
+      },
+    },
+
+    // -------------------------
+    // HIDE EXPRESS
+    // -------------------------
+    hidePoweredBy: true,
   })
 );
+
+
 
 // Rate limiting
 const apiLimiter = rateLimit({

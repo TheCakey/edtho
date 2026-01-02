@@ -23,13 +23,13 @@ body {
 #app {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 20px 100px 20px;
 }
 
 @media (max-width: 768px) {
- 
 
-  .headText{
+
+  .headText {
     font-size: 20px;
   }
 
@@ -91,11 +91,54 @@ h1 {
   opacity: 0.9;
 }
 
+.ad-sidebar-left {
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  width: 140px;
+  /* Slimmer for the gutter */
+  min-width: 140px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  z-index: 500;
+}
+
+@media (max-width: 1440px) {
+
+  /* Hide if screen is too small to show it in the gutter without overlap */
+  .ad-sidebar-left {
+    display: none;
+  }
+}
+
 .editor-container {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+.main-content-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+
+@media (max-width: 1200px) {
+  #app {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* The ad-sidebar-left media query was moved above */
 }
 
 textarea {
@@ -157,16 +200,23 @@ input:focus {
   left: auto;
   bottom: auto;
   transform: none;
-  min-width: 250px; /* Increased from 200px */
-  max-width: 350px; /* Increased from 300px */
+  min-width: 250px;
+  /* Increased from 200px */
+  max-width: 350px;
+  /* Increased from 300px */
   background: #323232;
   color: #fff;
-  padding: 10px 20px; /* Increased from 8px 16px */
-  border-radius: 6px; /* Increased from 4px */
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  padding: 10px 20px;
+  /* Increased from 8px 16px */
+  border-radius: 6px;
+  /* Increased from 4px */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  /* Slightly stronger shadow */
   text-align: center;
-  font-size: 15px; /* Increased from 14px */
-  line-height: 1.4; /* Increased from 1.2 */
+  font-size: 15px;
+  /* Increased from 14px */
+  line-height: 1.4;
+  /* Increased from 1.2 */
   opacity: 0;
   pointer-events: none;
   z-index: 9999;
@@ -223,15 +273,20 @@ input:focus {
 } */
 
 .sub-header {
-  font-size: 0.8rem; /* Reduced from 1.5rem */
-  color: #666; /* Changed to grey */
-  margin: 8px 0; /* Reduced margin */
-  font-weight: 300; /* Reduced from 500 for lighter weight */
+  font-size: 0.8rem;
+  /* Reduced from 1.5rem */
+  color: #666;
+  /* Changed to grey */
+  margin: 8px 0;
+  /* Reduced margin */
+  font-weight: 300;
+  /* Reduced from 500 for lighter weight */
   opacity: 0;
   transform: translateY(-10px);
   animation: fadeInDown 0.5s ease forwards;
   text-align: center;
-  letter-spacing: 0.3px; /* Reduced letter spacing */
+  letter-spacing: 0.3px;
+  /* Reduced letter spacing */
 }
 
 @keyframes fadeInDown {
@@ -436,10 +491,12 @@ input:focus {
 }
 
 @keyframes shake {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   10%,
   30%,
   50%,
@@ -447,6 +504,7 @@ input:focus {
   90% {
     transform: translateX(-2px);
   }
+
   20%,
   40%,
   60%,
@@ -572,13 +630,14 @@ input:focus {
 
 .visually-hidden {
   position: absolute !important;
-  width: 1px; 
-  height: 1px; 
-  padding: 0; 
-  margin: -1px; 
-  overflow: hidden; 
-  clip: rect(0, 0, 0, 0); 
-  white-space: nowrap; /* Prevent line breaks */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* Prevent line breaks */
   border: 0;
 }
 
@@ -589,15 +648,17 @@ input:focus {
 .site-footer {
   width: 100%;
   padding: 15px 0;
-  background-color: #f9f9f9; /* light background */
+  background-color: #f9f9f9;
+  /* light background */
   text-align: center;
   position: fixed;
   bottom: 0;
   left: 0;
   font-weight: 600;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
-  color: #888888; /* grey color */
+  color: #888888;
+  /* grey color */
   border-top: 1px solid #ddd;
   z-index: 1000;
 }
@@ -644,8 +705,10 @@ input:focus {
 @media (max-width: 600px) {
   .coffee-float-btn {
     right: 15px;
-    bottom: 58px;  /* 8px lower than before */
-    transform: scale(0.56);  /* smaller */
+    bottom: 58px;
+    /* 8px lower than before */
+    transform: scale(0.56);
+    /* smaller */
   }
 }
 
@@ -657,11 +720,11 @@ input:focus {
 }
 
 .seo-h1 {
-  position:absolute;
-  left:-9999px;
-  top:-9999px;
-  height:1px;
-  width:1px;
-  overflow:hidden;
-  white-space:nowrap;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
 }

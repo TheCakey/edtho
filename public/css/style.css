@@ -98,10 +98,9 @@ h1 {
   width: 140px;
   /* Slimmer for the gutter */
   min-width: 140px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 5px;
+  background: transparent;
+  /* No white box if ad fails to load */
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
